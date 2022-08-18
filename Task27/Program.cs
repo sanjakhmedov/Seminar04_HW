@@ -3,3 +3,22 @@
 // 452 -> 11
 // 82 -> 10
 // 9012 -> 12
+
+Console.Write("Enter the number: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+
+int SumDigits(int num)
+{
+    int res = num % 10;
+    for (int i = 0; num / 10 > 0; i++)
+    {
+        num = num / 10;
+        res = res + num % 10;
+    }
+    return res;
+}
+
+int sumDigits = SumDigits(n);
+
+Console.WriteLine($"Sum of the digits of {n} equals {sumDigits}.");
