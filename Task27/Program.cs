@@ -11,12 +11,20 @@ int n = Convert.ToInt32(Console.ReadLine());
 int SumDigits(int num)
 {
     int res = num % 10;
-    for (int i = 0; num / 10 > 0; i++)
+    if (num > 0)
     {
-        num = num / 10;
-        res = res + num % 10;
+        for (int i = 0; num / 10 > 0; i++)
+        {
+            num = num / 10;
+            res = res + num % 10;
+        }
+        return res;
     }
-    return res;
+    else
+    {
+        Console.WriteLine("Please enter the positive number!");
+        return 0;
+    }
 }
 
 int sumDigits = SumDigits(n);
